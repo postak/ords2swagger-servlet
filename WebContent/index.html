@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html id="htmldoc" lang="en-us" class="demo-sticky-footer-layout">
+
+<head>
+    <title>Oracle REST Data Service - swagger generator</title>
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="css/images/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="css/images/touchicon.png">
+    <meta name="apple-mobile-web-app-title" content="Oracle JET">
+
+    <link rel="stylesheet" href="css/libs/oj/v2.0.1/alta/oj-alta-min.css" id="css" />
+
+    <!-- RequireJS configuration file -->
+    <script data-main="js/main" src="js/libs/require/require.js"></script>
+</head>
+
+<body>
+    <div id="mainContent" class="oj-web-applayout-page">
+        <!-- Header content -->
+        <header role="banner" class="oj-web-applayout-header">
+            <div class="oj-web-applayout-max-width oj-flex-bar oj-sm-align-items-center">
+                <div data-bind="oj-flex-bar-middle">
+                  <span class="oj-web-applayout-header-title oj-sm-only-hide oj-md-only-hide" title="Application Name" data-bind="text: appTitle"></span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main page content -->
+        <div class="oj-web-applayout-content oj-web-applayout-max-width">
+
+
+                <div class="oj-form-layout">
+                    <div class="oj-form oj-sm-odd-cols-12 oj-md-odd-cols-4 oj-md-labels-inline">
+
+                        <div class="oj-flex">
+                            <div class="oj-flex-item">
+                                <label for="inputcontrol">Database connection String</label>
+                            </div>
+                            <div class="oj-flex-item">
+                                <input id="inputcontrol" type="text" data-bind="ojComponent: {component: 'ojInputText', value: jdbcUrl}" />
+                            </div>
+                        </div>
+                        <div class="oj-flex">
+                            <div class="oj-flex-item">
+                                <label for="inputcontrol">Database username </label>
+                            </div>
+                            <div class="oj-flex-item">
+                                <input id="text-input" type="username" data-bind="ojComponent: {component: 'ojInputText', value: username}" />
+                            </div>
+                        </div>
+                        <div class="oj-flex">
+                            <div class="oj-flex-item">
+                                <label for="password">Database password </label>
+                            </div>
+                            <div class="oj-flex-item">
+                                <input type="password" id="password" data-bind="ojComponent: {component: 'ojInputPassword',  value: password}" />
+                            </div>
+                        </div>
+                        <br/>
+                        <br/>
+                        <div class="oj-flex">
+                            <div class="oj-flex-item">
+                                <label for="text-input">REST Title </label>
+                            </div>
+                            <div class="oj-flex-item">
+                                <input type="text-input" id="rest_title" data-bind="ojComponent: {component: 'ojInputText',  value: rest_title}" />
+                            </div>
+                        </div>
+                        <div class="oj-flex">
+                            <div class="oj-flex-item">
+                                <label for="text-input">REST Document description </label>
+                            </div>
+                            <div class="oj-flex-item">
+                                <input type="text-input" id="rest_description" data-bind="ojComponent: {component: 'ojInputText',  value: rest_description}" />
+                            </div>
+                        </div>
+
+                        <div class="oj-flex">
+                            <div class="oj-flex-item">
+                                <label for="text-input">REST hostname </label>
+                            </div>
+                            <div class="oj-flex-item">
+                                <input type="text-input" id="rest_hostname" data-bind="ojComponent: {component: 'ojInputText',  value: rest_hostname}" />
+                            </div>
+                        </div>
+                        <div class="oj-flex">
+                            <div class="oj-flex-item">
+                                <label for="text-input">REST port </label>
+                            </div>
+                            <div class="oj-flex-item">
+                                <input type="text-input" id="rest_port" data-bind="ojComponent: {component: 'ojInputText',  value: rest_port}" />
+                            </div>
+                        </div>
+                        <div class="oj-flex">
+                            <div class="oj-flex-item">
+                                <label for="text-input">REST basepath </label>
+                            </div>
+                            <div class="oj-flex-item">
+                                <input type="text-input" id="rest_basepath" data-bind="ojComponent: {component: 'ojInputText',  value: rest_basepath}" />
+                            </div>
+                        </div>
+                        <div class="oj-flex">
+                            <div class="oj-flex-item">
+                                <label id="mainlabelid">REST Source data</label>
+                            </div>
+                            <div id="radiosetBasicDemoId" aria-labelledby="mainlabelid" data-bind="ojComponent: {
+                                    component: 'ojRadioset', value: filetype}">
+                              <span class="oj-choice-row">
+                                  <input id="ords" type="radio" name="rbb" value="ords" data-bind="click: setOrds">
+                                  <label for="ordsopt">Ords</label>
+                              </span>
+                              <span class="oj-choice-row">
+                                  <input id="apex" type="radio" name="rbb" value="apex" data-bind="click: setApex">
+                                  <label for="apexopt">Apex</label>
+                              </span>
+                            </div>
+                        </div>
+                        <div id=workspace class="oj-flex" style="display: none;">
+                            <div class="oj-flex-item">
+                                <label for="text-input">APEX workspace </label>
+                            </div>
+                            <div class="oj-flex-item">
+                                <input type="text-input" id="workspace" data-bind="ojComponent: {component: 'ojInputText',  value: workspace}" />
+                            </div>
+                        </div>
+
+
+                <button id="saveBtn" class="oj-button-sm oj-button oj-component oj-enabled oj-default oj-button-full-chrome oj-button-text-only -action-btn oj-component-initnode" data-bind="ojComponent: { component: 'ojButton', label: 'Generate' }, click: submitBt">
+                </button>
+
+
+                <br /><br />
+              </div>
+
+        <div id=lporesults style="display: none;".>
+
+        <div class="oj-panel oj-margin">
+          <div data-bind="ojComponent: {component: 'ojCollapsible', expanded: true}" class="oj-collapsible oj-component oj-component-initnode oj-expanded">
+            <div class="oj-collapsible-header" data-bind="text: jsonTitle" id="oj-collapsible-2-header">
+              <a href="#" class="oj-component-icon oj-clickable-icon-nocontext oj-collapsible-header-icon oj-collapsible-open-icon" aria-labelledby="oj-collapsible-2-header" role="button" aria-controls="oj-collapsible-2-content" aria-expanded="true"></a>
+            </div>
+
+            <div class="oj-collapsible-wrapper" style="max-height: 9999px; display: block;">
+              <div class="oj-collapsible-content oj-component-content" id="oj-collapsible-2-content">
+                <button id="actionBtn" class="oj-button-sm oj-button oj-component oj-enabled oj-default oj-button-full-chrome oj-button-text-only -action-btn oj-component-initnode" data-bind="ojComponent: { component: 'ojButton', label: downloadBtnLabel }, click: downloadHandler">
+                  <span class="oj-button-text">Download</span>
+                </button>
+                <br />
+            <br />
+                <div style="clear: both;">
+                  <div class="oj-form-control oj-component oj-read-only">
+
+                    <textarea id="textArea" readonly spellchek="false" data-bind="ojComponent: { component: 'ojTextArea', value: swaggerOutput , rootAttributes: { style:'max-width:100%'}} " placeholder="" class="oj-component-initnode" style="margin-top: 0px; margin-bottom: 0px; height: 400px; ; background-color: #f9f9f9; border:1px solid #d6dfe6"">
+
+                    </textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- -->
+
+          </div>
+
+
+
+</body>
+
+</html>
